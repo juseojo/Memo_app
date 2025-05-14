@@ -8,7 +8,7 @@
 import Foundation
 
 class MemoRepository: MemoProtocol {
-	func save_memo(_ memo_array: MemoEntity) {
+	func save_memo(_ memo_array: [MemoEntity]) {
 		do {
 			let data = try JSONEncoder().encode(memo_array)
 
@@ -42,6 +42,6 @@ class MemoRepository: MemoProtocol {
 }
 
 protocol MemoProtocol {
-	func save_memo(_ memo_array: MemoEntity)
+	func save_memo(_ memo_array: [MemoEntity])
 	func load_memo() -> [MemoEntity]
 }
